@@ -12,7 +12,7 @@ public class Hourly extends Employee {
 	// information.
 	// -----------------------------------------------------------------
 	public Hourly(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
-		super(eName, eAddress, ePhone, socSecNumber, rate);
+		super(eName, eAddress, ePhone, socSecNumber, rate, 0);
 
 		hoursWorked = 0;
 	}
@@ -45,5 +45,8 @@ public class Hourly extends Employee {
 		result += "\nCurrent hours: " + hoursWorked;
 
 		return result;
+	}
+	public int vacationDays() {
+		return 0;
 	}
 }

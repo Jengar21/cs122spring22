@@ -12,7 +12,7 @@ public class Executive extends Employee {
 	// information.
 	// -----------------------------------------------------------------
 	public Executive(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
-		super(eName, eAddress, ePhone, socSecNumber, rate);
+		super(eName, eAddress, ePhone, socSecNumber, rate, 28);
 
 		bonus = 0; // bonus has yet to be awarded
 	}
@@ -34,5 +34,9 @@ public class Executive extends Employee {
 		bonus = 0;
 
 		return payment;
+	}
+	
+	public int vacationDays() {
+		return this.vacationDays;
 	}
 }
