@@ -2,15 +2,10 @@ package assignments.assignment1;
 
 public class Account {
 	private int id = 0;
-	private double balance = 0.0;
+	protected double balance = 0.0;
 	private static double annualInterestRate = 0.0;
-	private java.util.Date dateCreated;
 
-	public Account() {
-		dateCreated = new java.util.Date();
-	}
-
-	public Account(int id, double balace) {
+	public Account(int id, double balance) {
 		this.id = id;
 		this.balance = balance;
 	}
@@ -27,9 +22,6 @@ public class Account {
 		return annualInterestRate;
 	}
 
-	public String getDateCreated() {
-		return this.dateCreated.toString();
-	}
 
 	public void setId(int id) {
 		this.id = id;
@@ -40,11 +32,11 @@ public class Account {
 	}
 
 	public void setAnnualInterestRate(double annualInterestRate) {
-		this.annualInterestRate = annualInterestRate;
+		Account.annualInterestRate = annualInterestRate;
 	}
 
 	public double getMonthlyInterestRate() {
-		return (annualInterestRate / 100) / 12 ;
+		return (annualInterestRate / 12) ;
 	}
 
 	public double getMonthlyInterest() {
@@ -53,10 +45,19 @@ public class Account {
 
 	public void withdraw(double amount) {
 		this.balance -= amount;
+		
+		if(balance >= amount)
+		{
+			balance -= amount;
+		}
+		else 
+			System.out.print("No sufficient balance");
 	}
 
 	public void deposit(double amount) {
 		this.balance += amount;
 	}
+	
+	
 
 }
