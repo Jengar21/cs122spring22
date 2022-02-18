@@ -3,7 +3,7 @@ package assignments.assignment1;
 public class Employee extends Person {
 	private String office;
 	private String salary;
-	private Account DATE_HIRED;
+	private String DATE_HIRED;
 
 	public Employee() {
 
@@ -14,7 +14,7 @@ public class Employee extends Person {
 
 	}
 
-	public Employee(String office, String salary, Account DATE_HIRED) {
+	public Employee(String office, String salary, String DATE_HIRED) {
 		this.office = office;
 		this.salary = salary;
 		this.DATE_HIRED = DATE_HIRED;
@@ -36,12 +36,16 @@ public class Employee extends Person {
 		this.salary = salary;
 	}
 
-	public Account getDATE_HIRED() {
+	public String getDATE_HIRED() {
 		return DATE_HIRED;
 	}
 
-	public void setName(Account DATE_HIRED) {
+	public void setName(String DATE_HIRED) {
 		this.DATE_HIRED = DATE_HIRED;
+	}
+	
+	public String toString() {
+		return super.toString() + " " + office + " " + salary;
 	}
 
 }

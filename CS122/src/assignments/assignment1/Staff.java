@@ -7,7 +7,7 @@ public class Staff extends Employee {
 
 	}
 
-	public Staff(String office, String salary, Account DATE_HIRED) {
+	public Staff(String office, String salary, String DATE_HIRED) {
 		super(office,salary,DATE_HIRED);
 	}
 
@@ -25,6 +25,10 @@ public class Staff extends Employee {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public String toString() {
+		return super.toString() + " " + title;
 	}
 
 

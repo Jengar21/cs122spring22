@@ -14,7 +14,8 @@ public class Faculty extends Employee{
 		this.rank = rank;
 	}
 	
-	public Faculty(String office, String salary, Account DATE_HIRED) {
+	public Faculty(String office, String salary, String DATE_HIRED) 
+	{
 		super(office,salary,DATE_HIRED);
 	}
 	
@@ -36,6 +37,11 @@ public class Faculty extends Employee{
 
 	public void setRank(String rank) {
 		this.rank = rank;
+	}
+	
+	public String toString()
+	{
+		return super.toString() + " " + office_hours + " " + rank;
 	}
 
 }

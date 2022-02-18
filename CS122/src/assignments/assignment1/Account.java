@@ -1,13 +1,17 @@
 package assignments.assignment1;
 
 public class Account {
-	private int id = 0;
+	protected int id = 0;
 	protected double balance = 0.0;
 	private static double annualInterestRate = 0.0;
 
 	public Account(int id, double balance) {
 		this.id = id;
 		this.balance = balance;
+	}
+
+	public Account() {
+		
 	}
 
 	public int getId() {
@@ -39,8 +43,8 @@ public class Account {
 		return (annualInterestRate / 12) ;
 	}
 
-	public double getMonthlyInterest() {
-		return balance * getMonthlyInterestRate();
+	public double setMonthlyInterest(double monthlyInterestRate) {
+		return getMonthlyInterestRate();
 	}
 
 	public void withdraw(double amount) {
@@ -58,6 +62,10 @@ public class Account {
 		this.balance += amount;
 	}
 	
+	public String toString() {
+		return "Account ID = "+ id +", balance = " + balance + ", annual interest rate = "+ annualInterestRate + ", monthly interest rate = "+ getMonthlyInterestRate() + " ";
+	}
+
 	
 
 }

@@ -1,20 +1,32 @@
 package assignments.assignment1;
 
 public class Checking extends Account {
-	public final double OVERDRAFTLIMIT = 1000.00;
+	private double overDraftLimit;
 
-	public Checking() {
-		
-	}
-	
-	public Checking(double OVERDRAFTLIMIT) {
-		this.OVERDRAFTLIMIT = OVERDRAFTLIMIT;
 
-	}
-
-	public Checking(int id, double balance) {
+	public Checking(int id, double balance, double overdraftLimit) {
 		super(id, balance);
+		this.overDraftLimit = overDraftLimit;
+	}
+
+	public double getOverdraftLimit() {
+		return overDraftLimit;
+	}
+
+	public void setOverdraftLimit(double overdraftLimit) {
+		this.overDraftLimit = overdraftLimit;
+	}
+
+	public void withdraw(double amount) {
+		if (getBalance() - amount > overDraftLimit) {
+			setBalance(getBalance() - amount);
+		}
+		else
+			System.out.println("Error!");
+	}
 
 
+	public String toString() {
+		return super.toString() + "over draft limit " + overDraftLimit;
 	}
 }

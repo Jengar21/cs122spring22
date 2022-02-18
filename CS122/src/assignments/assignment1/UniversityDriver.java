@@ -5,7 +5,7 @@ public class UniversityDriver {
 		Person person = new Person("Sarah", "Paulson", "2345643890",
 				"Pauls12@gmail.com");
 		Person student = new Student("Wendy", "Trade",
-				"0983452789", "wtc@gmail.com", "Senior");
+				"0983452789", "wtc@gmail.com", 3);
 		Person employee = new Employee("Noah", "David",
 				"7894533778", "Ndavid@gmail.com");
 		Person faculty = new Faculty("Kim", "Kash",
