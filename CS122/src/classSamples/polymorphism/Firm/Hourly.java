@@ -12,7 +12,7 @@ public class Hourly extends Employee {
 	// information.
 	// -----------------------------------------------------------------
 	public Hourly(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
-		super(eName, eAddress, ePhone, socSecNumber, rate, 0);
+		super(eName, eAddress, ePhone, socSecNumber, rate);
 
 		hoursWorked = 0;
 	}
@@ -35,6 +35,11 @@ public class Hourly extends Employee {
 
 		return payment;
 	}
+	
+	public int vacation()
+	{
+		return STANDARD_VACATION -7;
+	}
 
 	// -----------------------------------------------------------------
 	// Returns information about this hourly employee as a string.
@@ -45,8 +50,5 @@ public class Hourly extends Employee {
 		result += "\nCurrent hours: " + hoursWorked;
 
 		return result;
-	}
-	public int vacationDays() {
-		return 0;
 	}
 }

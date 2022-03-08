@@ -6,15 +6,17 @@ package classSamples.polymorphism.Firm;//***************************************
 
 public class Executive extends Employee {
 	private double bonus;
+	private int exVacation = 0;
 
 	// -----------------------------------------------------------------
 	// Constructor: Sets up this executive with the specified
 	// information.
 	// -----------------------------------------------------------------
-	public Executive(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
-		super(eName, eAddress, ePhone, socSecNumber, rate, 28);
+	
+	public Executive(String eName, String eAddress, String ePhone, String socSecNumber, double rate, double bonus, int exVacation) {
+		super(eName, eAddress, ePhone, socSecNumber, rate);
 
-		bonus = 0; // bonus has yet to be awarded
+		bonus = 0;
 	}
 
 	// -----------------------------------------------------------------
@@ -36,7 +38,8 @@ public class Executive extends Employee {
 		return payment;
 	}
 	
-	public int vacationDays() {
-		return this.vacationDays;
+	public int vacation() {
+		return STANDARD_VACATION + exVacation;
 	}
+
 }

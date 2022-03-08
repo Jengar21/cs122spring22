@@ -4,11 +4,11 @@ package classSamples.polymorphism.Firm;//***************************************
 //  Represents a generic staff member.
 //********************************************************************
 
-abstract public class StaffMember {
+abstract public class StaffMember implements payable, Comparable<StaffMember> {
 	protected String name;
 	protected String address;
 	protected String phone;
-	protected int vacationDays;
+	
 
 	// -----------------------------------------------------------------
 	// Constructor: Sets up this staff member using the specified
@@ -28,17 +28,26 @@ abstract public class StaffMember {
 
 		result += "Address: " + address + "\n";
 		result += "Phone: " + phone + "\n";
-		result += "Vacation Days: " + vacationDays;
+		
 
 		return result;
 	}
+	
+	public String getName() {
+		return name;
+	}
 
+	
 	// -----------------------------------------------------------------
 	// Derived classes must define the pay method for each type of
 	// employee.
 	// -----------------------------------------------------------------
-	public abstract double pay();
+	public int compareTo(StaffMember o)
+	{
+		return name.compareTo(o.getName());
+	}
 	
-	public abstract int vacationDays ();
+	public abstract int vacation ();
+
 	
 }
