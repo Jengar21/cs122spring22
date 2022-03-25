@@ -1,6 +1,6 @@
 package classSamples.polymorphism.SearchingAndSorting;
 
-public class Player {
+public class Player implements Comparable<Player>{
 	private final String name;
 	private int XP;
 
@@ -10,19 +10,15 @@ public class Player {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
-
-	public void setName(String name) {
-		name = name;
-	}
-
+	
 	public int getXP() {
 		return XP;
 	}
 
 	public void setXP(int XP) {
-		XP = XP;
+		this.XP = XP;
 	}
 
 	public String toString()
@@ -30,11 +26,12 @@ public class Player {
 		return name + " " + XP + " " ;
 	}
 	
-	public boolean equals(Object other) {
-		return (name.equals(((Player) other).getName()) && XP.equals(((Player) other).getXP(int)));
+	public boolean equals(Object o) {
+		return this.name.equals(((Player)o).getName());
 	}
 	
-	public int compareTo() {
+	public int compareTo(Player o) {
+		return name.compareTo(o.getName());
 		
 	}
 	
