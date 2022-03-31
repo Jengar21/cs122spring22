@@ -19,19 +19,19 @@ public class Fibonacci {
 
 		}
 	}
-	public static void main( String[] args) {
+	public static main( String[] args) {
 		for(int i =0; i<12; i++) {
 			System.out.print(fib(i)+ "\t");
 		}
 
-		public static boolean isPalindrome(String s) {
+		private static boolean isPalindrome(String s) {
 			if(s.length()<=1)
 				return true;
 			else if (s.charAt(0) != s.charAt(s.length()-1))
 				return false;
 			else
 				return isPalindrome(s.substring(1, s.length()-1));
-			
+
 
 		}
 
