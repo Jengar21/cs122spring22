@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
@@ -17,6 +18,8 @@ import javafx.scene.text.Font;
 public class FahrenheitPane extends GridPane {
 	private final Label result;
 	private final TextField fahrenheit;
+	//private final TextField fString;
+
 
 	// --------------------------------------------------------------------
 	// Sets up a GUI containing a labeled text field for converting
@@ -58,9 +61,18 @@ public class FahrenheitPane extends GridPane {
 	// Computes and displays the converted temperature when the user
 	// presses the return key while in the text field.
 	// --------------------------------------------------------------------
-	public void processReturn(ActionEvent event) {
-		int fahrenheitTemp = Integer.parseInt(fahrenheit.getText());
-		int celsiusTemp = (fahrenheitTemp - 32) * 5 / 9;
-		result.setText(celsiusTemp + "");
+	public void processReturn(ActionEvent e) {
+
+		try {
+			int fahrenheitTemp = Integer.parseInt(fahrenheit.getText());
+			int celsiusTemp = (fahrenheitTemp - 32) * 5 / 9;
+			result.setText(celsiusTemp + "");
+		} 
+		catch(NumberFormatException nfe) {
+			result.setText( "fix output");
+		}
+
 	}
 }
+
+
