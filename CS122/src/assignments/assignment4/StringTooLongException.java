@@ -57,7 +57,7 @@ class StringDemo
 
 				{
 
-					throw new StringTooLongException("String is too long");
+					throw new StringTooLongException("String is too long!!!");
 
 				}
 
